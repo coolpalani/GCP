@@ -44,8 +44,16 @@ EOF
 systemctl start mongodb
 systemctl enable mongodb
 
+
+
 # Install dependencies from apt
-apt-get install -yq ca-certificates git nodejs build-essential supervisor
+apt-get install -yq ca-certificates git  build-essential supervisor
+
+
+curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+bash nodesource_setup.sh
+apt-get install -y nodejs
+apt-get install -y gcc g++ make
 
 # Install nodejs
 mkdir /opt/nodejs
@@ -56,8 +64,11 @@ ln -s /opt/nodejs/bin/npm /usr/bin/npm
 # Get the application source code from the Google Cloud Repository.
 # git requires $HOME and it's not set during the startup script.
 export HOME=/root
+
+
 git config --global credential.helper gcloud.sh
-git clone https://source.developers.google.com/p/gcp-cookbook/r/gcpcookbook  /opt/app
+#git clone https://source.developers.google.com/p/gcp-cookbook/r/gcpcookbook  /opt/app
+git clone https://source.developers.google.com/p/krishna-gcp-april24/r/gcp-cookbook  /opt/app
 
 # Install app dependencies
 cd /opt/app/Chapter01/mysite
