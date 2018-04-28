@@ -1,0 +1,1 @@
+gcloud compute instances create vm-2 --metadata-from-file startup-script=./startup-script.sh  --image-family=debian-8 --image-project=debian-cloud   --scopes cloud-platform
