@@ -1,0 +1,2 @@
+COOKIE_SECRET=d44d5c45e7f8149aabc068244 
+mongo mongodb://35.203.62.151:27017
