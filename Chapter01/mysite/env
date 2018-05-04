@@ -1,0 +1,2 @@
+COOKIE_SECRET=d44d5c45e7f8149aabc068244 
+MONGO_URI=mongodb://localhost/mysite 
